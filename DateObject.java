@@ -1,4 +1,4 @@
-// Lab11 Start  Names Here Please
+// Matt Solberg and Dylan Finazzo
 public class DateObject {
 	// 1 o'oclock section
 	private int day;
@@ -48,7 +48,12 @@ public void setDay(String m, int d, int y, String cal) {
 	
 	// call one of isLeapGregorian and isLeap Julian
 	public boolean isLeap() {
-		return false;
+	    if(calendar.equals("Gregorian"))
+		    return isLeapGregorian();
+	    if(calendar.equals("Julian"))
+		       return isLeapJulian();
+
+     else return false;
 	}
 	
 	// leap year if divisible by 400, or if divisible by 4 and not 100
