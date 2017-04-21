@@ -113,6 +113,10 @@ public void setDay(String m, int d, int y, String cal) {
 		}
 		else {
 			bump();
+			if (daysInMonth(month)<day){
+				month++;
+				day = 1;
+			}
 		}
 	
 	
