@@ -1,4 +1,15 @@
+
 // Matt Solberg and Dylan Finazzo
+
+
+// Lab11 Start Jack Fergus & Sarah McDonald
+
+// Lab11 Start  Names Here Please Soon-Young Shimizu Wayne
+
+// Lab11 Start  Emily Fitts & Ooga Na
+// Lab11 Start  Kaitlyn Haase & Cameron Chandler
+
+
 public class DateObject {
 	// 1 o'oclock section
 	private int day;
@@ -29,6 +40,11 @@ public class DateObject {
 	
 public void setDay(String m, int d, int y, String cal) {
 		
+    day=d;
+    year=y;
+    month= monthToInt(m);
+    calendar= cal;
+
 
 	}
 		
@@ -43,7 +59,33 @@ public void setDay(String m, int d, int y, String cal) {
 	
 	// calculate the days in the month  Use isLeap
 	public int daysInMonth() {
-		return 0;
+	    int daysinmonth=0;
+	    if(isLeap()==false){
+		if(month==1||month==3||month==5||month==7||month==8||month==10||month==12){
+		    daysinmonth = 31;
+		    return daysinmonth;}
+		if(month==4||month==6||month==9||month==12){
+		    daysinmonth = 30;
+		    return daysinmonth;}
+		if(month==2){
+		    daysinmonth=28;
+		    return daysinmonth;
+		}
+	    }
+
+	    if(isLeap()==true){
+		if(month==1||month==3||month==5||month==7||month==8||month==10||month==12){
+		    daysinmonth = 31;
+		    return daysinmonth;}
+		if(month==4||month==6||month==9||month==12){
+		    daysinmonth = 30;
+		    return daysinmonth;}
+		if(month==2){
+		    daysinmonth=29;
+		    return daysinmonth;
+		}
+	    }
+	    return 0;	    
 	}
 	
 	// call one of isLeapGregorian and isLeap Julian
@@ -57,13 +99,17 @@ public void setDay(String m, int d, int y, String cal) {
 	}
 	
 	// leap year if divisible by 400, or if divisible by 4 and not 100
-	public boolean isLeapGregorian() {
-		return false;
+	public boolean isLeapGregorian(int year) {
+	    if( year%400==0 || (year%4==0 && !(year%100==0)))
+		return true;
+	    else return false;
 	}
 	
 	// leap year if divisible by 4
-	public boolean isLeapJulian() {
-		return false;
+	public boolean isLeapJulian(int year) {
+	    if ( year%4==0)
+		return true;
+	    else return false;
 	}
 	
 	public boolean sameDate(DateObject other) {
@@ -80,7 +126,9 @@ public void setDay(String m, int d, int y, String cal) {
 
 	// return a new Date with the same fields as this one
 	public DateObject generateCopy() {
-	    DateObject new1 = new DateObject();
+
+	    DateObject new1 = new DateObject();	
+	    new1.setDay(this.getMonth(), this.getDay(), this.getYear(), calendar); 
 	    return new1;
 	}
 	
@@ -92,11 +140,11 @@ public void setDay(String m, int d, int y, String cal) {
 	
 	//return the year
 	public int getYear() {
-		return 0;
+		return year;
 	}
 	// return the day
 	public int getDay() {
-		return 0;
+		return day;
 		
 	}
 	
@@ -104,7 +152,7 @@ public void setDay(String m, int d, int y, String cal) {
 	public String getMonth() {
 		
 		
-		return null;	
+	    return names[month];	
 	}
 	
 	// finish this - check for the end of a month use daysinmonth
@@ -118,6 +166,10 @@ public void setDay(String m, int d, int y, String cal) {
 		}
 		else {
 			bump();
+			if (daysInMonth(month)<day){
+				month++;
+				day = 1;
+			}
 		}
 	
 	
@@ -125,6 +177,10 @@ public void setDay(String m, int d, int y, String cal) {
 
 	// move forward n days (use makeTomorrow
 	public void makeTomorrow(int n){
+	    for (int i=0;i<n;i++){
+		makeTomorrow();
+	    }
+
 	}
 
 	// return true if this is after other
