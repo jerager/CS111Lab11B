@@ -1,3 +1,6 @@
+
+// Lab11 Start Jack Fergus & Sarah McDonald
+
 // Lab11 Start  Names Here Please Soon-Young Shimizu Wayne
 
 // Lab11 Start  Emily Fitts & Ooga Na
@@ -115,7 +118,9 @@ public void setDay(String m, int d, int y, String cal) {
 
 	// return a new Date with the same fields as this one
 	public DateObject generateCopy() {
-	    DateObject new1 = new DateObject();
+
+	    DateObject new1 = new DateObject();	
+	    new1.setDay(this.getMonth(), this.getDay(), this.getYear(), calendar); 
 	    return new1;
 	}
 	
