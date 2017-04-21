@@ -1,4 +1,6 @@
-// Lab11 Start  Emily Fitts & Ooga Nan
+// Lab11 Start  Emily Fitts & Ooga Na
+// Lab11 Start  Kaitlyn Haase & Cameron Chandler
+
 public class DateObject {
 	// 1 o'oclock section
 	private int day;
@@ -29,6 +31,11 @@ public class DateObject {
 	
 public void setDay(String m, int d, int y, String cal) {
 		
+    day=d;
+    year=y;
+    month= monthToInt(m);
+    calendar= cal;
+
 
 	}
 		
@@ -43,7 +50,33 @@ public void setDay(String m, int d, int y, String cal) {
 	
 	// calculate the days in the month  Use isLeap
 	public int daysInMonth() {
-		return 0;
+	    int daysinmonth=0;
+	    if(isLeap()==false){
+		if(month==1||month==3||month==5||month==7||month==8||month==10||month==12){
+		    daysinmonth = 31;
+		    return daysinmonth;}
+		if(month==4||month==6||month==9||month==12){
+		    daysinmonth = 30;
+		    return daysinmonth;}
+		if(month==2){
+		    daysinmonth=28;
+		    return daysinmonth;
+		}
+	    }
+
+	    if(isLeap()==true){
+		if(month==1||month==3||month==5||month==7||month==8||month==10||month==12){
+		    daysinmonth = 31;
+		    return daysinmonth;}
+		if(month==4||month==6||month==9||month==12){
+		    daysinmonth = 30;
+		    return daysinmonth;}
+		if(month==2){
+		    daysinmonth=29;
+		    return daysinmonth;
+		}
+	    }
+	    return 0;	    
 	}
 	
 	// call one of isLeapGregorian and isLeap Julian
