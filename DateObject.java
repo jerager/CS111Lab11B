@@ -1,4 +1,4 @@
-// Lab11 Start  Names Here Please
+// Lab11 Start  Kaitlyn Haase & Cameron Chandler
 public class DateObject {
 	// 1 o'oclock section
 	private int day;
@@ -29,6 +29,11 @@ public class DateObject {
 	
 public void setDay(String m, int d, int y, String cal) {
 		
+    day=d;
+    year=y;
+    month= monthToInt(m);
+    calendar= cal;
+
 
 	}
 		
