@@ -1,5 +1,8 @@
+// Lab11 Start  Names Here Please Soon-Young Shimizu Wayne
+
 // Lab11 Start  Emily Fitts & Ooga Na
 // Lab11 Start  Kaitlyn Haase & Cameron Chandler
+
 
 public class DateObject {
 	// 1 o'oclock section
@@ -85,13 +88,17 @@ public void setDay(String m, int d, int y, String cal) {
 	}
 	
 	// leap year if divisible by 400, or if divisible by 4 and not 100
-	public boolean isLeapGregorian() {
-		return false;
+	public boolean isLeapGregorian(int year) {
+	    if( year%400==0 || (year%4==0 && !(year%100==0)))
+		return true;
+	    else return false;
 	}
 	
 	// leap year if divisible by 4
-	public boolean isLeapJulian() {
-		return false;
+	public boolean isLeapJulian(int year) {
+	    if ( year%4==0)
+		return true;
+	    else return false;
 	}
 	
 	public boolean sameDate(DateObject other) {
