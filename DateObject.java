@@ -1,3 +1,5 @@
+// Lab11 Start  abbas, stanley
+
 
 // Matt Solberg and Dylan Finazzo
 
@@ -184,15 +186,46 @@ public void setDay(String m, int d, int y, String cal) {
 
 	}
 
+
+
+
+
+
+
 	// return true if this is after other
 	public boolean after(DateObject other) {
+	    if(year > other.getYear()){
+		return true;
+		    }
+	    else if(year == other.getYear() && month > monthToInt(other.getMonth())){
+		return true;
+		    }					   
+
+	    else if(year==other.getYear() && month==monthToInt(other.getMonth()) && day > other.getDay()){
+		return true;
+		    }
+	    
+	    else{
 		return false;
+	}
 	}
 	
 	// return true if this is before other 
 	public boolean before(DateObject other) {
+	
+	    if(other.getYear() > year){
+		return true;
+		    }
+	    else if(year == other.getYear() && month < monthToInt(other.getMonth())){
+		return true;
+		    }					   
+
+	    else if(year==other.getYear() && month==monthToInt(other.getMonth()) && day < other.getDay()){
+		return true;
+		    }
+	    
+	    else{
 		return false;
 	}
-	
-	
+	}
 }
