@@ -1,4 +1,4 @@
-// Lab11 Start  Names Here Please
+// Lab11 Start Jack Fergus & Sarah McDonald
 public class DateObject {
 	// 1 o'oclock section
 	private int day;
@@ -75,7 +75,9 @@ public void setDay(String m, int d, int y, String cal) {
 
 	// return a new Date with the same fields as this one
 	public DateObject generateCopy() {
-	    DateObject new1 = new DateObject();
+
+	    DateObject new1 = new DateObject();	
+	    new1.setDay(this.getMonth(), this.getDay(), this.getYear(), calendar); 
 	    return new1;
 	}
 	
