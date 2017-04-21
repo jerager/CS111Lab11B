@@ -1,4 +1,6 @@
+// Lab11 Start  Emily Fitts & Ooga Na
 // Lab11 Start  Kaitlyn Haase & Cameron Chandler
+
 public class DateObject {
 	// 1 o'oclock section
 	private int day;
@@ -118,11 +120,11 @@ public void setDay(String m, int d, int y, String cal) {
 	
 	//return the year
 	public int getYear() {
-		return 0;
+		return year;
 	}
 	// return the day
 	public int getDay() {
-		return 0;
+		return day;
 		
 	}
 	
@@ -130,7 +132,7 @@ public void setDay(String m, int d, int y, String cal) {
 	public String getMonth() {
 		
 		
-		return null;	
+	    return names[month];	
 	}
 	
 	// finish this - check for the end of a month use daysinmonth
