@@ -134,7 +134,8 @@ public void setDay(String m, int d, int y, String cal) {
 	
 	// return a new Date with the same fields as this one's tomorrow
 	public DateObject generateTomorrow() {
-	    DateObject new1 = new DateObject();
+	    DateObject new1 = generateCopy();
+	    new1.makeTomorrow();
 	    return new1;
 	}
 	
