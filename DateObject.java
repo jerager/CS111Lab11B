@@ -123,6 +123,8 @@ public void setDay(String m, int d, int y, String cal) {
 	
 	// return true if December 31
 	public boolean isLastDayInYear() {
+	    if(month==12 && day==31)
+		return true;
 		return false;
 	}
 
