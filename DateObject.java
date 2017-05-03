@@ -132,7 +132,7 @@ public void setDay(String m, int d, int y, String cal) {
 	public DateObject generateCopy() {
 
 	    DateObject new1 = new DateObject();	
-	    new1.setDay(this.getMonth(), this.getDay(), this.getYear(), calendar); 
+	    new1.setDay(day, month, year, calendar); 
 	    return new1;
 	}
 	
